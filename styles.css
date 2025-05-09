@@ -8,52 +8,59 @@
 /* Estilos generales */
 body {
   font-family: Arial, sans-serif;
-  background-color: #1a1a1a; /* Fondo oscuro similar al logo */
-  color: #ffffff; /* Texto blanco */
+  background-color: #1a1a1a; /* Fondo oscuro uniforme */
+  color: #ffffff;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between; /* Para separar header y footer */
   text-align: center;
 }
 
 .container {
-  max-width: 800px;
-  width: 100%;
-  padding: 20px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
 }
 
 .header {
-  text-align: center;
+  max-width: 800px;
 }
 
 .logo {
   max-width: 100%;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .title {
   font-size: 2rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .subtitle {
   font-size: 1.2rem;
-  color: #cccccc; /* Subtítulo más claro */
+  color: #cccccc;
 }
 
-/* Responsividad */
-@media (max-width: 600px) {
-  .logo {
-      width: 80%;
-  }
+/* Footer */
+.footer {
+  background-color: #1a1a1a; /* Mismo color de fondo */
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid #333;
+}
 
+/* Responsive */
+@media (max-width: 600px) {
   .title {
-      font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .subtitle {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
