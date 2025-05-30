@@ -5,29 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Defensa Laboral</title>
   <link rel="icon" type="image/png" href="img/favicon.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link rel="stylesheet" href="style-displays.css">
   <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <section>
+  <section id="portada-inicial">
     <div class="portada">
-      <h1>¿Te despidieron sin causa?</h1>
-      <h2>¿No te pagaron lo que te corresponde?</h2>
-    </div>
-    <div>
-      <h3>Defendemos los derechos de los trabajadores</h3>
       <div>
-        <div>
+        <h1>¿Te despidieron sin causa?</h1>
+        <h2>¿No te pagaron lo que te corresponde?</h2>
+      </div>
+      <div>
+        <h3>Defendemos los derechos de los trabajadores</h3>
+        <div class="accion">
           <p>Realizá tus consultas ahora sin cargo.</p>
           <a href="http://">Asesorate<i class="fa-solid fa-hand-point-up"></i></a>
         </div>
       </div>
     </div>
   </section>
+
+  <section id="logo-divisor">
+    <div class="contenedor-divisor">
+        <div class="hijo-divisor">
+          <img src="assets/img/Logo-Doble-Linea.svg" alt="Marca Defensa Laboral">
+          <h3>Nos especializamos en asesoramiento, negociación y litigio laboral.</h3>
+        </div>
+        <p>Atención personalizada y gratuita</p>
+    </div>
+  </section>
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Defensa Laboral. Todos los derechos reservados.</p>
+    <!-- <p>&copy; <span id="year"></span> Defensa Laboral. Todos los derechos reservados.</p> -->
   </footer>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();

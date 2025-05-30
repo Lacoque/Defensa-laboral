@@ -1,3 +1,16 @@
+:root {
+  --azul-corpo: #191A2F;
+  --azul-corpo-65: #191a2f9f;
+  --azul-corpo-contraste: #5E63D9;
+  --blanco: #fff;
+  --blanco-corpo: #F5F3F5;
+  --gris-corpo: #656256;
+  --naranja-corpo: #F5853F;
+  --purpura-corpo: #D14081;
+  --grad-azul: linear-gradient(#191A2F, #5E63D9);
+  --grad-naranja: linear-gradient(#F5853F, #D14081);
+}
+
 /* Reset básico */
 * {
   margin: 0;
@@ -5,19 +18,165 @@
   box-sizing: border-box;
 }
 
+
+
 /* Estilos generales */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #191a2f; 
-  color: #ffffff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-  text-align: center;
+
+@font-face {
+  font-family: 'Sora';
+  src: url('assets/fonts/Sora/Sora-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Philosopher';
+  src: url('assets/fonts/Philosopher/Philosopher-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Philosopher-Bold';
+  src: url('assets/fonts/Philosopher/Philosopher-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
 }
 
-.container {
+
+h1 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 70px;
+  letter-spacing: -3.5px;
+  line-height: 70px;
+}
+
+h2 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 43.26px;
+  letter-spacing: -2px;
+  line-height: 43.26px;
+}
+
+h3 {
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 500;
+  font-size: 33.26px;
+  letter-spacing: -.85px;
+}
+
+p {
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+  letter-spacing: -.3px;
+}
+
+a {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  letter-spacing: -.3px;
+}
+
+#portada-inicial {
+  padding: 2rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgb(94, 99, 217, .2), rgb(25, 26, 47, 8)), url('assets/img/dolor-cabeza-marcus-aurelius-4064177.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.portada {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: var(--azul-corpo-65);
+}
+
+.portada h1, 
+.portada h2,
+.portada .accion p {
+  color: var(--blanco);
+}
+
+.portada h3 {
+  color: var(--naranja-corpo);
+}
+
+.accion {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding-top: 2rem;
+}
+.accion p {
+
+}
+.accion a {
+  text-decoration: none;
+  padding: 1rem;
+  color: var(--azul-corpo);
+  background-color: var(--blanco-corpo);
+  display: flex;
+  gap: .5rem;
+  border-radius: 10px;
+  transition: .3s;
+}
+@media (hover:hover) {
+  .accion a:hover {
+    transform: scale(1.045);
+    background-color: var(--naranja-corpo);
+  }
+}
+
+#logo-divisor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--azul-corpo);
+}
+
+.contenedor-divisor {
+  width: 50%;
+  overflow: hidden;
+  /* padding: 1rem; */
+  border-radius: 10px;
+  background-color: var(--blanco-corpo);
+}
+
+.hijo-divisor {
+  display: flex;
+  padding: .85rem 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contenedor-divisor p {
+  display: flex;
+  padding: 1rem 0rem;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--naranja-corpo);
+  color: var(--blanco-corpo);
+}
+
+/* Footer */
+.footer {
+  background-color:#191a2f; 
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid #333;
+}
+
+/* .container {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -43,24 +202,4 @@ body {
 .subtitle {
   font-size: 1.2rem;
   color: #cccccc;
-}
-
-/* Footer */
-.footer {
-  background-color:#191a2f; 
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #888;
-  border-top: 1px solid #333;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .title {
-    font-size: 1.6rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-}
+} */

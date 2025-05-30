@@ -1,0 +1,18 @@
+/* Pantalla menor de 960px */
+@media (max-width:960px) {
+    .portada {
+
+    }
+}
+
+
+/* Pantalla menor de 600px */
+@media (max-width: 600px) {
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}
