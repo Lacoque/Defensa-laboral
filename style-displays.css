@@ -102,6 +102,21 @@
     footer p {
         text-align: center;
     }
+
+    .contenido-footer {
+        flex-direction: column;
+    }
+    .contactos-footer {
+        flex-direction: column;
+        gap: .5rem;
+    }
+    .contactos-footer p:nth-child(2) {
+        display: none;
+    }
+
+    .texto-footer {
+        align-items: center;
+    }
 }
 
 
