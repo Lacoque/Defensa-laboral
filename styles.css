@@ -10,6 +10,7 @@
   --grad-azul: linear-gradient(#191A2F, #5E63D9);
   --grad-azul-180: linear-gradient(-90deg, #191A2F, #5E63D9);
   --grad-naranja: linear-gradient(#F5853F, #D14081);
+  --grad-blanco: linear-gradient(180deg, #F5F3F5, #ffffff00);
 }
 
 /* Reset básico */
@@ -482,7 +483,7 @@ section#trabajamos {
   padding: 4rem 0rem;
   color: #888;
   border-top: 1px solid #333;
-  background-color:#191a2f; 
+  background: var(--grad-blanco);
   font-size: 0.9rem;
 }
 
@@ -500,7 +501,7 @@ div.footer a p {
 div.footer > div {
   display: flex;
   align-items: center;
-  gap: .2rem;
+  gap: 2rem;
 }
 
 @media (hover:hover) {
@@ -510,30 +511,39 @@ div.footer > div {
     }
 }
 
-/* .container {
-  flex: 1;
+footer img {
+  height: 15vh;
+  object-fit: contain;
+}
+
+footer h4 {
+  font-family: 'Sora';
+  font-weight: 500;
+  font-size: large;
+}
+
+.texto-footer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.header {
-  max-width: 800px;
+.contactos-footer {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem;
 }
 
-.logo {
-  max-width: 60%;
-  height: auto;
-  margin-bottom: 30px;
+div.footer .redes a {
+  color: var(--azul-corpo);
+  text-decoration: none;
+  transition: all .3s;
+  padding: .2rem;
+  font-size: 1.5rem;
 }
 
-.title {
-  font-size: 2rem;
-  margin-bottom: 15px;
+@media (hover:hover) {
+  div.footer .redes a:hover {
+    color: var(--naranja-corpo);
+  }
 }
-
-.subtitle {
-  font-size: 1.2rem;
-  color: #cccccc;
-} */
