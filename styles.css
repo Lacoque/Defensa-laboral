@@ -8,6 +8,7 @@
   --naranja-corpo: #F5853F;
   --purpura-corpo: #D14081;
   --grad-azul: linear-gradient(#191A2F, #5E63D9);
+  --grad-azul-180: linear-gradient(-90deg, #191A2F, #5E63D9);
   --grad-naranja: linear-gradient(#F5853F, #D14081);
 }
 
@@ -66,6 +67,14 @@ h3 {
   letter-spacing: -.85px;
 }
 
+h5 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  letter-spacing: -2px;
+  line-height: 33px;  
+}
+
 p {
   font-family: 'Sora', sans-serif;
   font-weight: 500;
@@ -76,6 +85,40 @@ a {
   font-family: 'Sora', sans-serif;
   font-weight: 600;
   letter-spacing: -.3px;
+}
+
+section {
+  padding: 1.5rem 0rem;
+}
+
+.wpp {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  
+  width: 60px;
+  height: 60px;
+  bottom: 2rem;
+  right: 2rem;
+  
+  border: 2px solid #25d366;
+  color: #25d366;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
+  mix-blend-mode: color-dodge;
+  transition: .3s;
+}
+@media (hover:hover) {
+  .wpp:hover {
+    border: 2px solid var(--blanco-corpo);
+    color: var(--blanco-corpo);
+    background-color: #25d366;
+    mix-blend-mode: normal;
+  }
 }
 
 #portada-inicial {
@@ -167,13 +210,293 @@ a {
   color: var(--blanco-corpo);
 }
 
+#porque-elegirnos {
+  padding: 2rem;
+  height: 60vh;
+  background: linear-gradient(rgb(94, 99, 217, .2), rgb(25, 26, 47, 8)), url('assets/img/abogado-argentino-revisando-documentos-de-un-caso.jpg');
+}
+
+.elegirnos {
+  width: calc(50% + 2rem);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.elegirnos h2 {
+  color: var(--blanco-corpo);
+  margin-bottom: 2rem;
+}
+
+.atributos {
+  width: max-content;
+  gap: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.atributos i {
+  padding-right: .5rem;
+}
+
+.atributos h4 {
+  font-family: 'Sora';
+  font-weight: 500;
+  color: var(--blanco-corpo);
+  padding: .5rem;
+  border-radius: 5px;
+  background-color: var(--purpura-corpo);
+  width: 100%;
+}
+
+
+/* Nuestros Servicios */
+#nuestros-servicios {
+  align-items: center;
+  background-color: var(--gris-corpo);
+}
+
+.servicios {
+  display: flex;
+  gap: 2rem;
+  overflow-x: scroll;
+  padding: 2rem 0rem;
+}
+
+.servicios > div {
+  padding: 1rem;
+  background-color: var(--blanco-corpo);
+  border-radius: 10px;
+  min-width: calc(33% + 2rem);
+}
+
+.servicios h5,
+.servicios p {
+  color: var(--gris-corpo);
+}
+
+.titulo-nuestros-servicios {
+  padding: 1rem 2rem;
+}
+
+.titulo-nuestros-servicios h2,
+.titulo-nuestros-servicios h3 {
+  color: var(--blanco);
+}
+
+.servicios-aclaracion {
+  margin-top: 1rem;
+  width: max-content;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: var(--azul-corpo);
+  color: var(--blanco);
+}
+
+.servicios-aclaracion p {
+  color: var(--naranja-corpo);
+}
+
+/* Como trabajamos */
+section#trabajamos {
+  padding: 0px;
+  background-color: var(--azul-corpo);
+}
+
+#trabajamos ol {
+  list-style-type: none;
+}
+
+/* .como-trabajamos {
+  border-radius: 0px 0px 50px 50px;
+  overflow: hidden;
+} */
+
+.como-trabajamos img {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  border-radius: 0px 0px 50px 50px;
+}
+
+.texto-como-trabajamos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 2rem;
+}
+
+.texto-como-trabajamos > div:first-of-type {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.texto-como-trabajamos > div > div {
+  display: flex;
+  width: 100%;
+}
+
+.texto-como-trabajamos h2 {
+  margin-top: 3rem;
+  color: var(--blanco-corpo);
+}
+
+.texto-como-trabajamos h4 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: -.85px;
+  color: var(--blanco-corpo);
+}
+
+.texto-como-trabajamos span {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: -.85px;
+  padding: 1rem;
+  margin-right: .35rem;
+  color: var(--blanco-corpo);
+  background-color: var(--naranja-corpo);
+}
+
+.texto-como-trabajamos ul {
+  font-family: 'Sora', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  letter-spacing: -.3px;
+  color: var(--blanco-corpo);
+
+  border-radius: 10px;
+  padding: 2rem;
+  background-color: var(--naranja-corpo);
+}
+
+.casos-comunes {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.casos-comunes h3 {
+  color: var(--blanco-corpo);
+}
+
+
+
+/* Formulario */
+#formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--blanco-corpo);
+  padding: 4rem 0rem;
+}
+
+#formulario > div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: calc(65% + 2rem);
+}
+
+#formulario form {
+  width: 100%;
+}
+
+#formulario form input,
+#formulario form textarea {
+  width: 100%;
+  padding: .5rem 1rem;
+
+  font-family: 'Sora', sans-serif;
+  font-weight: 300;
+  font-size: .95rem;
+  color: var(--blanco);
+  background-color: #bababa;
+  border-radius: 5px;
+  margin: .2rem;
+
+  border: none;
+}
+
+#formulario form input::placeholder,
+#formulario form textarea::placeholder {
+  color: var(--blanco);
+}
+
+#formulario form p:last-child {
+  margin-top: 1rem;
+  display: flex;
+    justify-content: space-between;
+}
+
+#formulario form p button {
+  font-family: 'Sora';
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: var(--blanco-corpo);
+  background: var(--grad-azul-180);
+  border-radius: 5px;
+  border: none;
+
+  display: flex;
+  gap: .5rem;
+  padding: 1rem 1.5rem;
+  align-items: center;
+
+  transition: .3s;
+}
+
+@media (hover:hover) {
+  #formulario form p button:hover {
+    transform: scale(1.045);
+    background: var(--naranja-corpo);
+  }
+}
+
+
 /* Footer */
 .footer {
-  background-color:#191a2f; 
-  padding: 20px;
-  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .3rem;
+  padding: 4rem 0rem;
   color: #888;
   border-top: 1px solid #333;
+  background-color:#191a2f; 
+  font-size: 0.9rem;
+}
+
+div.footer a {
+    color: #E2E2E2;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .3s;
+    padding: .2rem;
+}
+div.footer a p {
+    transition: all .3s;
+}
+div.footer > div {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+}
+
+@media (hover:hover) {
+    div.footer a:hover p {
+        transform:translateY(-.5rem);
+        color:#fa001c;
+    }
 }
 
 /* .container {
