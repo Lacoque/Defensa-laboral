@@ -174,19 +174,34 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-<!-- Script para mostrar el mensaje emergente -->
+<!-- Script para enviar sin recargar -->
 <script>
-  const form = document.querySelector('form[name="contacto"]');
+  const form = document.getElementById('contactForm');
   const toast = document.getElementById('toast');
 
   form.addEventListener('submit', function (e) {
-    
-    toast.classList.add('show');
+    e.preventDefault(); 
+    const formData = new FormData(form);
 
+    fetch('/', {
+      method: 'POST',
+      body: formData,
+    })
+    .then(() => {
+     
+      toast.classList.add('show');
 
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 6000);
+      form.reset();
+
+     
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 6000);
+    })
+    .catch(error => {
+      alert('Hubo un error al enviar el formulario.');
+      console.error('Error:', error);
+    });
   });
 </script>
 </body>
