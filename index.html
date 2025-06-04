@@ -133,13 +133,16 @@
           <label><input type="text" name="whatsapp" placeholder="Whatsapp" />Ingresa un número de comunicación</label>
         </p>
         <p>
-          <label><textarea name="message" placeholder="Mensaje"></textarea></label>
+          <label><textarea name="mensaje" placeholder="Mensaje"></textarea></label>
         </p>
         <p>
           Atención por WhatsApp las 24 hs, confidencialidad garantizada.
           <button type="submit">Enviar<i class="fa-solid fa-arrow-right"></i></button>
         </p>
       </form>
+      <div id="gracias" style="display:none; position:fixed; top:20px; right:20px; background:#4CAF50; color:white; padding:15px; border-radius:8px; z-index:1000;">
+        ¡Gracias por tu mensaje!
+      </div>
     </div>
   </section>
   
@@ -172,6 +175,33 @@
   </footer>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script>
+    document.getElementById("form-contacto").addEventListener("submit", function(e) {
+      e.preventDefault();
+  
+      const form = e.target;
+      const data = new FormData(form);
+      data.append("form-name", "contacto");
+  
+      fetch("/", {
+        method: "POST",
+        body: data
+      })
+      .then(() => {
+        // Mostrar cartel
+        const cartel = document.getElementById("gracias");
+        cartel.style.display = "block";
+  
+        // Ocultar después de 4 segundos
+        setTimeout(() => {
+          cartel.style.display = "none";
+        }, 4000);
+  
+        form.reset();
+      })
+      .catch(error => alert("Error al enviar: " + error));
+    });
   </script>
 </body>
 </html>
