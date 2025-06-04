@@ -123,7 +123,7 @@
       <h3>Completá el formulario y te respondemos en el día</h3>
     </div>
     <div>
-      <form name="contacto" method="POST" data-netlify="true">
+      <form name="contacto" method="POST" data-netlify="true" action="#">
         <input type="hidden" name="form-name" value="contacto" />
 
         <p>
@@ -178,13 +178,8 @@
 <script>
   const form = document.querySelector('form');
   const toast = document.getElementById('toast');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
- 
-    
+  form.addEventListener('submit', function () {
     toast.classList.add('show');
-
-   
     setTimeout(() => {
       toast.classList.remove('show');
     }, 4000);
