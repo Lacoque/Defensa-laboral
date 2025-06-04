@@ -123,7 +123,7 @@
       <h3>Completá el formulario y te respondemos en el día</h3>
     </div>
     <div>
-      <form name="contacto" method="POST" data-netlify="true" action="#">
+      <form name="contacto" method="POST" data-netlify="true" netlify>
         <input type="hidden" name="form-name" value="contacto" />
 
         <p>
@@ -174,15 +174,19 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-  <!-- Script para mostrar el toast después de enviar el formulario -->
+<!-- Script para mostrar el mensaje emergente -->
 <script>
-  const form = document.querySelector('form');
+  const form = document.querySelector('form[name="contacto"]');
   const toast = document.getElementById('toast');
-  form.addEventListener('submit', function () {
+
+  form.addEventListener('submit', function (e) {
+    
     toast.classList.add('show');
+
+
     setTimeout(() => {
       toast.classList.remove('show');
-    }, 4000);
+    }, 6000);
   });
 </script>
 </body>
