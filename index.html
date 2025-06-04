@@ -178,12 +178,13 @@
 <script>
   const form = document.querySelector('form');
   const toast = document.getElementById('toast');
-
-  form.addEventListener('submit', function () {
-    // Muestra el mensaje emergente
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+ 
+    
     toast.classList.add('show');
 
-    // Oculta el mensaje después de 4 segundos
+   
     setTimeout(() => {
       toast.classList.remove('show');
     }, 4000);
