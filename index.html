@@ -141,9 +141,7 @@
         </p>
       </form>
     </div>
-    <div id="gracias" style="display:none; position:fixed; top:20px; right:20px; background:#4CAF50; color:white; padding:15px; border-radius:8px; z-index:1000;">
-      ¡Gracias por tu mensaje!
-    </div>
+    <div id="toast" class="toast">¡Gracias! Tu mensaje fue enviado.</div>
   </section>
   
   
@@ -176,32 +174,20 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-  <script>
-    document.getElementById("form-contacto").addEventListener("submit", function(e) {
-      e.preventDefault();
-  
-      const form = e.target;
-      const data = new FormData(form);
-      data.append("form-name", "contacto");
-  
-      fetch("/", {
-        method: "POST",
-        body: data
-      })
-      .then(() => {
-        // Mostrar cartel
-        const cartel = document.getElementById("gracias");
-        cartel.style.display = "block";
-  
-        // Ocultar después de 4 segundos
-        setTimeout(() => {
-          cartel.style.display = "none";
-        }, 4000);
-  
-        form.reset();
-      })
-      .catch(error => alert("Error al enviar: " + error));
-    });
-  </script>
+  <!-- Script para mostrar el toast después de enviar el formulario -->
+<script>
+  const form = document.querySelector('form');
+  const toast = document.getElementById('toast');
+
+  form.addEventListener('submit', function () {
+    // Muestra el mensaje emergente
+    toast.classList.add('show');
+
+    // Oculta el mensaje después de 4 segundos
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 4000);
+  });
+</script>
 </body>
 </html>
